@@ -17,9 +17,13 @@ img {
 .slider-title h1:hover {
   text-shadow: 0 0 15px #dd789f;
 }
+.slider-c {
+  width: 60%;
+  margin: auto;
+}
 .slider-container {
   height: 500px;
-  width: 1150px;
+  width: 100%;
   box-shadow: 15px 15px rgba(0, 0, 0, 0.582);
   position: relative;
   overflow: hidden;
@@ -70,14 +74,19 @@ img {
 }
 .slide p {
   color: #fff;
-  font-size: 50px;
+  padding-right: 25px;
+  font-size: 40px;
   text-shadow: 0 0 5px #000000;
 }
 
 [id^="slide"]:checked + .slide {
   left: 0;
   z-index: 100;
-  transition: left 0.65s ease-out;
+  transition: left 0.65s ease-in-out;
+  -webkit-transition: left 0.65s ease-in-out;
+  -moz-transition: left 0.65s ease-in-out;
+  -ms-transition: left 0.65s ease-in-out;
+  -o-transition: left 0.65s ease-in-out;
 }
 
 .slide-1 {

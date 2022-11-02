@@ -2,10 +2,36 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  transition: 300ms all;
+  -webkit-transition: 300ms all;
+  -moz-transition: 300ms all;
+  -ms-transition: 300ms all;
+  -o-transition: 300ms all;
 }
+
+html {
+  min-height: 100%;
+  height: 100%;
+}
+
 ::selection {
   background-color: #dd789f;
   color: #ffffff;
+}
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #dd789f; /* color of the tracking area */
+  border-radius: 20px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #fef6e4; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 1px solid #dd789f; /* creates padding around scroll thumb */
 }
 body {
   background-color: #55423d;
@@ -14,10 +40,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 .all {
-  width: 60%;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 .logo {
   color: bisque;
@@ -49,7 +76,9 @@ body {
 }
 .container-top {
   display: flex;
-  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
   margin-top: 70px;
   width: 1000px;
   height: 600px;
@@ -62,9 +91,9 @@ body {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
+
 .container-content {
   width: 500px;
-  justify-content: left;
   border-right: 1px solid #f582ae;
 }
 .container-content h1 {
@@ -113,6 +142,8 @@ body {
   text-shadow: 0 0 15px #dd789f;
 }
 .menu-box {
+  margin: auto;
+  width: 60%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -226,6 +257,8 @@ body {
   gap: 15px;
 }
 .chef-title h1 {
+  position: relative;
+  z-index: 2;
   color: bisque;
   text-align: center;
   font-size: 30px;
@@ -292,18 +325,71 @@ body {
   margin-top: -120px;
   justify-content: right;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 .chefs-img img {
-  background: none;
   width: 100%;
   height: auto;
-  margin: auto;
-  padding-left: 100px;
 }
+
 .footer {
-  margin-top: 100px;
-  display: flex;
-  width: 1000px;
-  height: 700px;
-  background-color: #fef6e4;
+  padding-top: 50px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+  .container-top {
+    position: relative;
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+  }
+
+  .container-top .container-content {
+    border: none;
+  }
+
+  .container-top .container-img {
+    width: 100%;
+  }
+
+  .slider-c {
+    width: 90% !important;
+  }
+
+  .slider-c .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .slider-c .slide p {
+    font-size: 20pt;
+    font-weight: bold;
+    padding: 0 !important;
+  }
+
+  .chef {
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .chefs .chefs-p p {
+    font-size: 12pt;
+  }
+
+  .chefs .chefs-img {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 548px) {
+  .container-top .container-content {
+    width: 100%;
+  }
 }
